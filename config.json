@@ -1,5 +1,11 @@
 {
-    "modules": [],
+    "modules": [
+        "login",
+        "main_navigation",
+        "home",
+        "contact_detail",
+        "profile"
+    ],
     "module_directory_name": "module",
     "experimental_mode": false,
     "learning_mode": false,
