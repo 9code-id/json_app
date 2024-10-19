@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:json_app/core.dart';
-import 'package:json_app/service/auth_service/auth_service.dart';
-import 'package:json_app/state_util.dart';
-import '../view/login_view.dart';
 
 class LoginController extends State<LoginView> {
   static late LoginController instance;

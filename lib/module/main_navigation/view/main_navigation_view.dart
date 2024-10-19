@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:json_app/core.dart';
-import 'package:json_app/shared/theme/theme.dart';
-import '../controller/main_navigation_controller.dart';
 
 class MainNavigationView extends StatefulWidget {
   const MainNavigationView({super.key});

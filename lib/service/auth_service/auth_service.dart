@@ -26,24 +26,6 @@ class AuthService {
     DBService.set("isLoggedIn", "false");
   }
 
-  void update({
-    String? id,
-    String? firstName,
-    String? lastName,
-    String? email,
-    String? dob,
-  }) {
-    User user = UserService.users.firstWhere((element) => element.id == id);
-    user.firstName = firstName;
-    user.lastName = lastName;
-    user.email = email;
-    user.dob = dob;
-  }
-
-  void delete(String id) {
-    UserService.users.removeWhere((element) => element.id == id);
-  }
-
   void reloadUserData() {
     var userIndex =
         UserService.users.indexWhere((element) => element.id == userId);

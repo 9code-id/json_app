@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:json_app/core.dart';
-import 'package:json_app/state_util.dart';
-import '../controller/home_controller.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -134,8 +132,9 @@ class HomeView extends StatefulWidget {
         ),
         floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.add),
-          onPressed: () {
-            Get.to(const ContactFormView());
+          onPressed: () async {
+            await Get.to(const ContactDetailView());
+            controller.reload();
           },
         ),
       ),

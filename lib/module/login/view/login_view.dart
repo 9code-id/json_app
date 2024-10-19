@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:json_app/core.dart';
-import 'package:json_app/shared/theme/theme.dart';
-import 'package:json_app/shared/util/validator/validator.dart';
-import 'package:json_app/shared/widget/textfield/text_field.dart';
-import '../controller/login_controller.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});

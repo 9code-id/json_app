@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:json_app/core.dart';
-import 'package:json_app/shared/theme/theme.dart';
-import 'package:json_app/shared/util/validator/date/date.dart';
-import '../controller/profile_controller.dart';
 
 class ProfileView extends StatefulWidget {
   const ProfileView({super.key});
@@ -15,6 +11,8 @@ class ProfileView extends StatefulWidget {
         title: const Text("My Profile"),
         actions: [
           InkWell(
+            splashColor: Colors.transparent,
+            highlightColor: Colors.transparent,
             onTap: () => controller.logout(),
             child: Text(
               "Logout",

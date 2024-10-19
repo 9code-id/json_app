@@ -1,8 +1,3 @@
-import 'package:json_app/service/auth_service/auth_service.dart';
-import 'package:json_app/service/db_service/db_service.dart';
-import 'package:json_app/service/user_service/user_service.dart';
-import 'package:json_app/shared/theme/theme.dart';
-import 'package:json_app/state_util.dart';
 import 'package:json_app/core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -28,8 +23,9 @@ class _MyAppState extends State<MyApp> {
       title: 'Flutter Demo',
       navigatorKey: Get.navigatorKey,
       theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        useMaterial3: false,
         textTheme: GoogleFonts.poppinsTextTheme(),
         appBarTheme: AppBarTheme(
           backgroundColor: Colors.white,
@@ -58,8 +54,25 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
         inputDecorationTheme: InputDecorationTheme(
+          contentPadding: const EdgeInsets.symmetric(
+            vertical: 4.0,
+            horizontal: 8.0,
+          ),
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12.0),
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.0),
+            borderSide: const BorderSide(
+              color: Colors.blue,
+            ),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.0),
+            borderSide: BorderSide(
+              color: greyTextColor,
+              width: 0.5,
+            ),
           ),
         ),
         floatingActionButtonTheme: FloatingActionButtonThemeData(

@@ -116,6 +116,7 @@ class _QTextFieldState extends State<QTextField> {
           ],
           TextFormField(
             enabled: widget.enabled,
+            textInputAction: TextInputAction.next,
             controller: textEditingController,
             focusNode: focusNode,
             validator: widget.validator,

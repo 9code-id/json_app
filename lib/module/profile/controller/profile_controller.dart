@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:json_app/core.dart';
-import '../view/profile_view.dart';
 
 class ProfileController extends State<ProfileView> {
   static late ProfileController instance;
