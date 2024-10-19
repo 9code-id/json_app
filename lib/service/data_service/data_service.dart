@@ -8,7 +8,7 @@ class DataService {
     return jsonDecode(jsonString);
   }
 
-  Future<List<Map<String, dynamic>>> loadDataJson() async {
+  Future<List> loadDataJson() async {
     String jsonString = await rootBundle.loadString('assets/json/data.json');
     return jsonDecode(jsonString);
   }

@@ -49,4 +49,10 @@ class User {
         "email": email,
         "dob": dob,
       };
+
+  String get2DigitChar() {
+    var name2DigitChar = firstName![0].toUpperCase() +
+        (lastName == null ? "" : lastName![0].toUpperCase());
+    return name2DigitChar;
+  }
 }

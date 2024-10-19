@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:json_app/core.dart';
 import '../view/main_navigation_view.dart';
@@ -14,9 +13,7 @@ class MainNavigationController extends State<MainNavigationView> {
     WidgetsBinding.instance.addPostFrameCallback((_) => onReady());
   }
 
-  void onReady() {
-    
-  }
+  void onReady() {}
 
   @override
   void dispose() {
@@ -25,5 +22,10 @@ class MainNavigationController extends State<MainNavigationView> {
 
   @override
   Widget build(BuildContext context) => widget.build(context, this);
+
+  int selectedIndex = 0;
+  updateIndex(int newIndex) {
+    selectedIndex = newIndex;
+    setState(() {});
+  }
 }
-    

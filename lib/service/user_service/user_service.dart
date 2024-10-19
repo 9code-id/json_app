@@ -4,8 +4,9 @@ import 'package:json_app/service/data_service/data_service.dart';
 class UserService {
   static List<User> users = [];
   Future<List<User>> getUsers() async {
-    List<Map<String, dynamic>> data = await DataService().loadDataJson();
+    List data = await DataService().loadDataJson();
     users = data.map((e) => User.fromJson(e)).toList();
+    users.sort((a, b) => a.firstName!.compareTo(b.firstName!));
     return users;
   }
 

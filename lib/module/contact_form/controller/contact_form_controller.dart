@@ -1,10 +1,11 @@
+
 import 'package:flutter/material.dart';
 import 'package:json_app/core.dart';
-import '../view/profile_view.dart';
+import '../view/contact_form_view.dart';
 
-class ProfileController extends State<ProfileView> {
-  static late ProfileController instance;
-  late ProfileView view;
+class ContactFormController extends State<ContactFormView> {
+  static late ContactFormController instance;
+  late ContactFormView view;
 
   @override
   void initState() {
@@ -13,7 +14,9 @@ class ProfileController extends State<ProfileView> {
     WidgetsBinding.instance.addPostFrameCallback((_) => onReady());
   }
 
-  void onReady() {}
+  void onReady() {
+    
+  }
 
   @override
   void dispose() {
@@ -22,14 +25,5 @@ class ProfileController extends State<ProfileView> {
 
   @override
   Widget build(BuildContext context) => widget.build(context, this);
-
-  logout() {
-    AuthService().logout();
-    Get.offAll(const LoginView());
-  }
-
-  reload() {
-    AuthService().reloadUserData();
-    setState(() {});
-  }
 }
+    

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:json_app/core.dart';
 import '../view/home_view.dart';
@@ -14,9 +13,7 @@ class HomeController extends State<HomeView> {
     WidgetsBinding.instance.addPostFrameCallback((_) => onReady());
   }
 
-  void onReady() {
-    
-  }
+  void onReady() {}
 
   @override
   void dispose() {
@@ -25,5 +22,19 @@ class HomeController extends State<HomeView> {
 
   @override
   Widget build(BuildContext context) => widget.build(context, this);
+
+  String search = "";
+  updateSearch(String value) {
+    search = value;
+    setState(() {});
+  }
+
+  reload() async {
+    setState(() {});
+  }
+
+  reloadUserData() async {
+    await UserService().getUsers();
+    setState(() {});
+  }
 }
-    

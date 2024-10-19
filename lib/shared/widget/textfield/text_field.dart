@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class QTextField extends StatefulWidget {
   const QTextField({
-    required this.label,
+    this.label,
     required this.onChanged,
     super.key,
     this.id,
@@ -21,7 +21,7 @@ class QTextField extends StatefulWidget {
     this.controller,
   });
   final String? id;
-  final String label;
+  final String? label;
   final String? value;
   final String? hint;
   final String? helper;
@@ -100,25 +100,42 @@ class _QTextFieldState extends State<QTextField> {
       margin: const EdgeInsets.only(
         bottom: 12,
       ),
-      child: TextFormField(
-        enabled: widget.enabled,
-        controller: textEditingController,
-        focusNode: focusNode,
-        validator: widget.validator,
-        maxLength: widget.maxLength,
-        obscureText: visible == false && widget.obscure,
-        decoration: InputDecoration(
-          labelText: widget.label,
-          suffixIcon: icon,
-          helperText: widget.helper,
-          hintText: widget.hint,
-        ),
-        onChanged: (value) {
-          widget.onChanged(value);
-        },
-        onFieldSubmitted: (value) {
-          if (widget.onSubmitted != null) widget.onSubmitted!(value);
-        },
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (widget.label != null) ...[
+            Text(
+              widget.label!,
+              style: const TextStyle(
+                fontSize: 14.0,
+              ),
+            ),
+            const SizedBox(
+              height: 8.0,
+            ),
+          ],
+          TextFormField(
+            enabled: widget.enabled,
+            controller: textEditingController,
+            focusNode: focusNode,
+            validator: widget.validator,
+            maxLength: widget.maxLength,
+            obscureText: visible == false && widget.obscure,
+            decoration: InputDecoration(
+              suffixIcon: widget.suffixIcon != null ? icon : null,
+              prefixIcon:
+                  widget.prefixIcon != null ? Icon(widget.prefixIcon) : null,
+              helperText: widget.helper,
+              hintText: widget.hint,
+            ),
+            onChanged: (value) {
+              widget.onChanged(value);
+            },
+            onFieldSubmitted: (value) {
+              if (widget.onSubmitted != null) widget.onSubmitted!(value);
+            },
+          ),
+        ],
       ),
     );
   }

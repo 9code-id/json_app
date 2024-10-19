@@ -4,6 +4,7 @@
         "main_navigation",
         "home",
         "contact_detail",
+        "contact_form",
         "profile"
     ],
     "module_directory_name": "module",

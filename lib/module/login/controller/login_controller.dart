@@ -1,6 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:json_app/core.dart';
+import 'package:json_app/service/auth_service/auth_service.dart';
+import 'package:json_app/state_util.dart';
 import '../view/login_view.dart';
 
 class LoginController extends State<LoginView> {
@@ -14,9 +15,7 @@ class LoginController extends State<LoginView> {
     WidgetsBinding.instance.addPostFrameCallback((_) => onReady());
   }
 
-  void onReady() {
-    
-  }
+  void onReady() {}
 
   @override
   void dispose() {
@@ -25,5 +24,19 @@ class LoginController extends State<LoginView> {
 
   @override
   Widget build(BuildContext context) => widget.build(context, this);
+
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  String? userId = "5c8a80f52dfee238898d64cf";
+  login() {
+    bool isNotValid = formKey.currentState!.validate() == false;
+    if (isNotValid) {
+      return;
+    }
+
+    bool isLoggedIn = AuthService().login(userId!);
+    if (isLoggedIn) {
+      Get.offAll(const MainNavigationView());
+    }
+  }
 }
-    
